@@ -4,9 +4,9 @@
  * Auth
  */
 Route::group(['namespace' => '\App\Http\Controllers\Auth'], function() {
-    Route::get('auth/login', ['as' => 'auth.form', 'uses' => 'AuthController@getLogin']);
-    Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'AuthController@postLogin']);
-    Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'AuthController@getLogout']);
+    Route::get('auth/login', ['as' => 'auth.form', 'uses' => 'LoginController@showLoginForm']);
+    Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'LoginController@login']);
+    Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'LoginController@logout']);
 });
 
 /*

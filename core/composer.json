@@ -5,36 +5,69 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.0",
-        "ext-gd":"*",
-        "ext-curl":"*",
-        "laravel/framework": "5.1.*",
-        "jansenfelipe/cidades-gratis": "^1.0",
-        "jansenfelipe/cep-gratis": "^2.0",
-        "jansenfelipe/cnpj-gratis": "^2.0",
+        "php": ">=7.2.0",
+        "ext-gd": "*",
+        "ext-curl": "*",
+        "laravel/framework": "^6.2",
+        "fideloper/proxy": "^4.0",
+        "laravel/tinker": "^2.0",
+        "jansenfelipe/cidades-gratis": "^2.0",
+        "jansenfelipe/cep-gratis": "^3.0",
+        "jansenfelipe/cnpj-gratis": "^3.0",
         "jansenfelipe/utils": "^2.0",
-        "jansenfelipe/cpf-gratis": "^2.0",
+        "jansenfelipe/cpf-gratis": "^3.0",
         "jansenfelipe/cfop": "^1.0",
         "jansenfelipe/ncm": "^1.0",
-        "jansenfelipe/nfephp-serialize": "^3.10",
-        "nfephp-org/nfephp": "^2.00",
-        "barryvdh/laravel-debugbar": "^2.0",
-        "laraerp/ordination": "^1.0",
-        "filp/whoops": "^1.1"
+        "jansenfelipe/nfephp-serialize": "^3.11",
+        "nfephp-org/sped-nfe": "^5.0",
+        "barryvdh/laravel-debugbar": "^3.2.8",
+        "laraerp/ordination": "^2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.1",
-        "phpunit/phpunit": "^4.8"
+        "orchestra/testbench": "^4.5",
+        "phpunit/phpunit": "^8.0"
+    },
+    "repositories": [{
+            "type": "path",
+            "url": "../../cidades-gratis"
+        },
+        {
+            "type": "path",
+            "url": "../../cpf-gratis"
+        },
+        {
+            "type": "path",
+            "url": "../../cnpj-gratis"
+        },
+        {
+            "type": "path",
+            "url": "../../cep-gratis"
+        },
+        {
+            "type": "path",
+            "url": "../../utils"
+        },
+        {
+            "type": "path",
+            "url": "../../nfephp-serialize"
+        },
+        {
+            "type": "path",
+            "url": "../../ordination"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database/seeds",
+            "database/migrations"
         ],
         "psr-4": {
             "Laraerp\\": "src"
         }
-    },
-    "config": {
-        "preferred-install": "dist"
     }
 }
